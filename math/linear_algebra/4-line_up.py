@@ -16,3 +16,4 @@ def add_arrays(arr1, arr2):
         return None
     else:
         return [sum(x) for x in zip(arr1, arr2)]
+    
