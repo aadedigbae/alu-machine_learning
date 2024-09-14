@@ -1,28 +1,23 @@
 #!/usr/bin/env python3
-"""_summary_
-Contains a func add_matrices2D(mat1, mat2) that adds 2D matrices
-"""
+"""function to add 2D matrix into a new one"""
 
 
 def add_matrices2D(mat1, mat2):
-    """_summary_
+    """ adding two matrix element wise
 
     Args:
-        mat1 (_type_): _description_
-        mat2 (_type_): _description_
+        mat1, mat2: Given matrix
 
-    Returns:
-        _type_: _description_
+    Return:
+        the sum of matrix: new matrix
+
     """
-    if len(mat1) != len(mat2) or len(mat1[0]) != len(mat2[0]):
+    if len(mat1) != len(mat2):
         return None
-    output_matrix = []
-
-    for i in range(len(mat1)):
-        current_row = [
-            mat1[i][j] + mat2[i][j] for j in range(len(mat1[0]))
-        ]
-
-        output_matrix.append(current_row)
-
-    return output_matrix
+    elif len(mat1[0]) != len(mat2[0]):
+        return None
+    else:
+        new_mat = [[mat1[i][j] + mat2[i][j]
+                    for j in range(len(mat1[0]))] for i in range(len(mat1))]
+        for count in new_mat:
+            return new_mat

@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
-"""_summary_
-Contains a func add_arrays(arr1, arr2) that adds elements in same position.
-"""
+""" function to add two arrays elements-wise"""
 
 
 def add_arrays(arr1, arr2):
-    """_summary_
+    """ adding two arrays element wise
 
     Args:
-        arr1 (int): _description_
-        arr2 (int): _description_
+        arr1, arr2: Given arrays
 
-    Returns:
-        list: A new list
+    Return:
+        the sum of arrays: new matrix
+
     """
     if len(arr1) != len(arr2):
         return None
-    return [arr1[i] + arr2[i] for i in range(len(arr1))]
+    else:
+        return [sum(x) for x in zip(arr1, arr2)]

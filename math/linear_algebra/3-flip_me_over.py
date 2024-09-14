@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
-"""_summary_
-Contains a func matrix_transpose(matrix) that returns the transpose of a matrix
-"""
+""" Transpose function to check a new matrix transposed"""
 
 
 def matrix_transpose(matrix):
-    """_summary_
+    """ return a new matrix transposed
 
     Args:
-        matrix (_type_): _description_
+        matrix: given list
 
-    Returns:
-        _type_: A list of lists
+    Return:
+        new_matrix: Transposed matrix
+
     """
-    new_matrix = [
-        [0 for _ in range(len(matrix))] for _ in range(len(matrix[0]))
-    ]
-    for r in range(len(matrix)):
-        for c in range(len(matrix[r])):
-            new_matrix[c][r] = matrix[r][c]
+    if type(matrix[0]) != list:
+        return [len(matrix)]
+    else:
+        new_matrix = [[matrix[j][i] for j in range(len(matrix))]
+                      for i in range(len(matrix[0]))]
     return new_matrix
