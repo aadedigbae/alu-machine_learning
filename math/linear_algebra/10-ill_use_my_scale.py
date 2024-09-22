@@ -1,16 +1,7 @@
 #!/usr/bin/env python3
-"""_summary_
-Contains a function that returns the shape of a numpy.ndarray
-"""
+"""function to calculate shape of an array using numpy"""
 
 
 def np_shape(matrix):
-    """_summary_
-
-    Args:
-        matrix (_type_): _description_
-
-    Returns:
-        _type_: _description_
-    """
-    return tuple(matrix.shape)
+    """ shape of an array"""
+    return matrix.shape

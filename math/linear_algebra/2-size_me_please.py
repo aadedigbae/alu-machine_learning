@@ -1,18 +1,10 @@
 #!/usr/bin/env python3
-"""
-    Contains a func matrix_shape(matrix) that returns the shape of a matrix
-"""
+"""function to check the shape of the matrix"""
 
 
 def matrix_shape(matrix):
-    """_summary_
-
-    Args:
-        matrix (_type_): _description_
-
-    Returns:
-        _type_: A list of integers
-    """
-    if type(matrix) is not list:
-        return []
-    return [len(matrix)] + matrix_shape(matrix[0])
+    """ return the shape of a matrix """
+    if type(matrix[0]) != list:
+        return [len(matrix)]
+    else:
+        return [len(matrix)] + matrix_shape(matrix[0])

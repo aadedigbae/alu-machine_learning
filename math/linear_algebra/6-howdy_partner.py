@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""_summary_
-Contains a func cat_arrays(arr1, arr2) that concatenates two arrays
-"""
+"""function to concatenate 2 arrays into a new one"""
 
 
 def cat_arrays(arr1, arr2):
-    """_summary_
+    """ concatenate two arrays into a new one
 
     Args:
-        arr1 (_type_): _description_
-        arr2 (_type_): _description_
+        arr1, arr2: Given array
 
-    Returns:
-        _type_: _description_
+    Return:
+        the new list of arrays: arr3
+
     """
-    return arr1 + arr2
+    arr3 = []
+    arr3 = arr1 + arr2
+    return arr3

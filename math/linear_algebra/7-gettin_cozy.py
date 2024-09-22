@@ -1,23 +1,19 @@
 #!/usr/bin/env python3
-"""_summary_
-Contains a func cat_matrices2D() that concatenates two matrices
-"""
+"""function to concatenate 2 matrices along
+    a specific axis"""
 
 
 def cat_matrices2D(mat1, mat2, axis=0):
-    """_summary_
+    """ concatenate two matrices
+     with an specific axis"""
 
-    Args:
-        mat1 (_type_): _description_
-        mat2 (_type_): _description_
-        axis (int, optional): _description_. Defaults to 0.
-
-    Returns:
-        _type_: _description_
-    """
-    if axis == 0 and len(mat1[0]) == len(mat2[0]):
-        return mat1 + mat2
-    elif axis == 1 and len(mat1) == len(mat2):
-        return [mat1[i] + mat2[i] for i in range(len(mat1))]
+    if (len(mat1[0]) == len(mat2[0])) and axis == 0:
+        new_mat1 = [x[:] for x in mat1]
+        new_mat2 = [x[:] for x in mat2]
+        new_mat = new_mat1 + new_mat2
+        return new_mat
+    elif (len(mat1) == len(mat2)) and axis == 1:
+        new_mat = [mat1[x] + mat2[x] for x in range(len(mat1))]
+        return new_mat
     else:
         return None
