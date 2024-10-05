@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-"""Function that squares up the summation game"""
+#Function that squares up the summation game
 
 
 def summation_i_squared(n):
-    """ A handy function to sum up i ** 2 for all i's up to n """
-
     # If n is 1, return 1 since 1^2 = 1
     if n == 1:
         return 1
