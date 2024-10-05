@@ -7,7 +7,6 @@ def poly_derivative(poly):
     """
     Calculate the derivative of a polynomial.
     """
-    
     # Initialize an empty list to store the derivative
     deriv = []
     # Check if the input is a valid non-empty list
