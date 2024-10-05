@@ -16,7 +16,8 @@ def poly_integral(poly, C=0):
 
     Returns:
         list: A list of coefficients representing the integral of the polynomial.
-        None: If the input is not valid (i.e., not a list or contains non-numeric values).
+        None: If the input is not valid 
+        (i.e., not a list or contains non-numeric values).
     """
 
     # Check if poly is a valid list and C is a numeric value
