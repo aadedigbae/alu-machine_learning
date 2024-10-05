@@ -21,7 +21,7 @@ def poly_integral(poly, C=0):
     # Calculate the integral for each coefficient
     for i in range(len(poly) - 1, 0, -1):
         integral.append(poly[i] / (i + 1))
-    # Append the coefficient for the constant term and the constant of integration
+    # Append the coefficient for the constant term
     integral.append(poly[0])
     integral.append(C)
     # Handle the case where the polynomial is a constant zero
