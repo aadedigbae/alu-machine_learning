@@ -13,6 +13,5 @@ def summation_i_squared(n):
     if n < 1:
         return None
     
-    # Use the formula for the sum of squares: n(n + 1)(2n + 1) / 6
     result = (n*(n+1)*(2*n+1))//6
     return result
