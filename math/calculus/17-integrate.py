@@ -10,14 +10,12 @@ def poly_integral(poly, C=0):
     Computes the coefficients of the integral of a polynomial function.
 
     Args:
-        poly (list): A list of coefficients representing a polynomial, where the 
-                     index represents the power of the variable.
+        poly (list): A list of coefficients representing a polynomial
         C (int, float): The constant of integration, default is 0.
 
     Returns:
         list: A list of coefficients representing the integral of the polynomial.
-        None: If the input is not valid 
-        (i.e., not a list or contains non-numeric values).
+        None: If the input is not valid
     """
 
     # Check if poly is a valid list and C is a numeric value
