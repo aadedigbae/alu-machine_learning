@@ -53,15 +53,7 @@ class Binomial:
         n_fact = self.factorial(self.n)
         k_fact = self.factorial(k)
         n_k_fact = self.factorial(self.n - k)
-        binom_coeff = n_fact / (k_fact * n_k_fact)
-        p_term = self.p ** k
-        q_term = (1 - self.p) ** (self.n - k)
-        
-        # Return the final result
-        return binom_coeff * p_term * q_term
-
-# Return the final result
-return binom_coeff * p_term * q_term
+        return (n_fact / (k_fact * n_k_fact)) * (self.p ** k) * ((1 - self.p) ** (self.n - k))
 
     def cdf(self, k):
         """Calculates the Cumulative Distribution Function (CDF)
