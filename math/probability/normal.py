@@ -9,7 +9,6 @@ class Normal:
     """
     Represents a Normal (Gaussian) distribution.
     """
-    
     pi = 3.1415926536  # Approximation of Pi
     e = 2.7182818285   # Approximation of Euler's number
 
@@ -42,13 +41,13 @@ class Normal:
 
     def x_value(self, z):
         """
-        Calculates the x-value corresponding to a given z-score `z`.
+        Calculates the x-value
         """
         return self.stddev * z + self.mean
 
     def pdf(self, x):
         """
-        Calculates the Probability Density Function (PDF) for a given value `x`.
+        Calculates the Probability Density Function (PDF)
         """
         p1 = 1 / (self.stddev * ((2 * Normal.pi) ** 0.5))
         p2 = ((x - self.mean) ** 2) / (2 * (self.stddev ** 2))
