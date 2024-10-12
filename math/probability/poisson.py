@@ -1,82 +1,59 @@
 #!/usr/bin/env python3
 """
-This module represents the Poisson distribution.
+Script to model and calculate values related to a Poisson distribution.
 """
 
 
-class Poisson:
+class Poisson():
     """
-    Represents a Poisson distribution for discrete probability analysis.
+    A class representing a Poisson distribution, providing methods 
+    to calculate the Probability Mass Function (PMF) and the Cumulative 
+    Distribution Function (CDF).
     """
 
-    def factorial(self, k):
-        """
-        Calculates the factorial of a given non-negative integer `k`.
+    e = 2.7182818285  # Approximation of Euler's number, used in calculations.
 
-        Args:
-            k (int): The number to calculate the factorial for.
-
-        Returns:
-            int:Returns 1 for k = 0 or 1, and 0 if k is negative.
-        """
-        if k < 0:
-            return 0
-        if k in [0, 1]:
-            return 1
-        return k * self.factorial(k - 1)
     def __init__(self, data=None, lambtha=1.):
         """
-        Initializes a Poisson distribution.
-
-        Args:
-            data (list): 
-            lambtha (float)
-            
-        Raises:
-            ValueError: If `lambtha` is not positive
-            TypeError: If `data` is not a list.
+        Initializes the Poisson distribution.
         """
         if data is None:
             if lambtha <= 0:
-                raise ValueError('lambtha must be a positive value')
+                raise ValueError("lambtha must be a positive value")
             self.lambtha = float(lambtha)
         else:
-            if not isinstance(data, list):
-                raise TypeError('data must be a list')
-            if len(data) < 2:
-                raise ValueError('data must contain multiple values')
-            self.lambtha = float(sum(data) / len(data))
+            if type(data) is not list:
+                raise TypeError("data must be a list")
+            elif len(data) < 2:
+                raise ValueError("data must contain multiple values")
+            else:
+                self.lambtha = sum(data) / len(data)  # Estimate lambtha from data
+
     def pmf(self, k):
         """
-        Calculates the Probability Mass Function (PMF)
-        for a given number of successes `k`.
-
-        Args:
-            k (int): The number of events to calculate the PMF for.
-
-        Returns:
-            float: The PMF value for the given number of successes.
+        Calculates the Probability Mass Function (PMF) 
+        for a given number of occurrences (k).
         """
+        k = int(k)
         if k < 0:
             return 0
-        k = int(k)
-        e = 2.7182818285  # Euler's number (approximate value)
-        return (self.lambtha ** k) * (e ** (-self.lambtha)) / self.factorial(k)
+        factorial_k = 1
+        for i in range(1, k + 1):
+            factorial_k *= i  # Calculate the factorial of k
+
+        # PMF formula: (e^(-λ) * λ^k) / k!
+        pmf = Poisson.e ** -self.lambtha * self.lambtha ** k / factorial_k
+        return pmf
+
     def cdf(self, k):
         """
         Calculates the Cumulative Distribution Function (CDF)
-        for a given number of successes `k`.
-
-        Args:
-            k (int): The number of events to calculate the CDF for.
-
-        Returns:
-            float: The CDF value up to the given number of successes.
+        for a given number of occurrences (k).
         """
-        k = int(k) if isinstance(k, (int, float)) else k
+        k = int(k)
         if k < 0:
             return 0
         cdf = 0
         for i in range(k + 1):
-            cdf += self.pmf(i)
+            cdf += self.pmf(i)  # Sum of PMFs from 0 to k
         return cdf
