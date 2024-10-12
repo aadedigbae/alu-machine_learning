@@ -10,9 +10,7 @@ class Poisson():
     to calculate the Probability Mass Function (PMF) and the Cumulative 
     Distribution Function (CDF).
     """
-
     e = 2.7182818285  # Approximation of Euler's number, used in calculations.
-
     def __init__(self, data=None, lambtha=1.):
         """
         Initializes the Poisson distribution.
@@ -28,7 +26,6 @@ class Poisson():
                 raise ValueError("data must contain multiple values")
             else:
                 self.lambtha = sum(data) / len(data)  # Estimate lambtha from data
-
     def pmf(self, k):
         """
         Calculates the Probability Mass Function (PMF) 
@@ -40,11 +37,9 @@ class Poisson():
         factorial_k = 1
         for i in range(1, k + 1):
             factorial_k *= i  # Calculate the factorial of k
-
         # PMF formula: (e^(-λ) * λ^k) / k!
         pmf = Poisson.e ** -self.lambtha * self.lambtha ** k / factorial_k
         return pmf
-
     def cdf(self, k):
         """
         Calculates the Cumulative Distribution Function (CDF)
