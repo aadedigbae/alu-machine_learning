@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Poisson Distribution Class
-This module defines a class that represents the Poisson distribution.
+This module represents the Poisson distribution.
 """
 
 class Poisson:
@@ -17,7 +16,7 @@ class Poisson:
             k (int): The number to calculate the factorial for.
 
         Returns:
-            int: The factorial of `k`. Returns 1 for k = 0 or 1, and 0 if k is negative.
+            int:Returns 1 for k = 0 or 1, and 0 if k is negative.
         """
         if k < 0:
             return 0
@@ -30,11 +29,11 @@ class Poisson:
         Initializes a Poisson distribution.
 
         Args:
-            data (list): A list of data points from which to calculate the rate parameter `lambtha`.
-            lambtha (float): The expected number of events (rate parameter), must be positive.
-        
+            data (list): 
+            lambtha (float)
+            
         Raises:
-            ValueError: If `lambtha` is not positive or if `data` contains fewer than two values.
+            ValueError: If `lambtha` is not positive
             TypeError: If `data` is not a list.
         """
         if data is None:
@@ -50,7 +49,8 @@ class Poisson:
 
     def pmf(self, k):
         """
-        Calculates the Probability Mass Function (PMF) for a given number of successes `k`.
+        Calculates the Probability Mass Function (PMF)
+        for a given number of successes `k`.
 
         Args:
             k (int): The number of events to calculate the PMF for.
@@ -66,7 +66,8 @@ class Poisson:
 
     def cdf(self, k):
         """
-        Calculates the Cumulative Distribution Function (CDF) for a given number of successes `k`.
+        Calculates the Cumulative Distribution Function (CDF)
+        for a given number of successes `k`.
 
         Args:
             k (int): The number of events to calculate the CDF for.
