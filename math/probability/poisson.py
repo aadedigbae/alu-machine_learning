@@ -3,6 +3,7 @@
 This module represents the Poisson distribution.
 """
 
+
 class Poisson:
     """
     Represents a Poisson distribution for discrete probability analysis.
@@ -23,7 +24,6 @@ class Poisson:
         if k in [0, 1]:
             return 1
         return k * self.factorial(k - 1)
-
     def __init__(self, data=None, lambtha=1.):
         """
         Initializes a Poisson distribution.
@@ -46,7 +46,6 @@ class Poisson:
             if len(data) < 2:
                 raise ValueError('data must contain multiple values')
             self.lambtha = float(sum(data) / len(data))
-
     def pmf(self, k):
         """
         Calculates the Probability Mass Function (PMF)
@@ -63,7 +62,6 @@ class Poisson:
         k = int(k)
         e = 2.7182818285  # Euler's number (approximate value)
         return (self.lambtha ** k) * (e ** (-self.lambtha)) / self.factorial(k)
-
     def cdf(self, k):
         """
         Calculates the Cumulative Distribution Function (CDF)
