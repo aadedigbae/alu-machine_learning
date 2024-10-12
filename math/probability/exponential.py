@@ -9,7 +9,6 @@ class Exponential:
     Represents an Exponential distribution, providing methods
     to calculate the PDF and CDF based on the rate parameter.
     """
-
     e = 2.7182818285  # Approximation of Euler's number
 
     def __init__(self, data=None, lambtha=1.):
@@ -40,7 +39,7 @@ class Exponential:
 
     def cdf(self, x):
         """
-        Calculates the Cumulative Distribution Function (CDF) 
+        Calculates the Cumulative Distribution Function (CDF)
         for a given value `x`.
         """
         if x < 0:
