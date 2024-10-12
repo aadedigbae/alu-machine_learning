@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
-"""Create a class Binomial that represents a binomial distribution
+"""
+Create a class Binomial that represents a binomial distribution
 """
 
+
 class Binomial:
-    """Class that represents a binomial distribution"""
+    """
+    Class that represents a binomial distribution
+    """
 
     def __init__(self, data=None, n=1, p=0.5):
         """
         Initializes the Binomial distribution.
-
-        Args:
-            data (list): List of data points to estimate n (trials) and p (probability of success).
-            n (int): Number of trials (used if no data is provided).
-            p (float): Probability of success (must be between 0 and 1, exclusive).
-        
-        Raises:
-            ValueError: If n is not positive or if p is not between 0 and 1.
-            TypeError: If `data` is not a list.
         """
         if data is None:
             if n <= 0:
@@ -37,13 +32,8 @@ class Binomial:
             self.p = mean / self.n
 
     def factorial(self, k):
-        """Calculates the factorial of a given number k.
-
-        Args:
-            k (int): The number to calculate the factorial for.
-
-        Returns:
-            int: The factorial of k.
+        """
+        Calculates the factorial of a given number k.
         """
         result = 1
         for i in range(1, k+1):
@@ -51,19 +41,14 @@ class Binomial:
         return result
 
     def pmf(self, k):
-        """Calculates the Probability Mass Function (PMF) for a given number of successes `k`.
-
-        Args:
-            k (int): The number of successes to calculate the PMF for.
-
-        Returns:
-            float: The PMF value for `k`.
+        """
+        Calculates the Probability Mass Function (PMF)
+        for a given number of successes `k`.
         """
         if not isinstance(k, int):
             k = int(k)
         if k < 0:
             return 0
-
         # PMF formula: (nCk) * (p^k) * (1-p)^(n-k)
         n_fact = self.factorial(self.n)
         k_fact = self.factorial(k)
@@ -71,13 +56,8 @@ class Binomial:
         return (n_fact / (k_fact * n_k_fact)) * (self.p ** k) * ((1 - self.p) ** (self.n - k))
 
     def cdf(self, k):
-        """Calculates the Cumulative Distribution Function (CDF) for a given number of successes `k`.
-
-        Args:
-            k (int): The number of successes to calculate the CDF for.
-
-        Returns:
-            float: The CDF value for `k`.
+        """Calculates the Cumulative Distribution Function (CDF)
+        afor a given number of successes `k`.
         """
         if not isinstance(k, int):
             k = int(k)

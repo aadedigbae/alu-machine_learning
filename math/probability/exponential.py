@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
 Script to define an Exponential distribution class with methods
-to compute the Probability Density Function (PDF) and Cumulative Distribution Function (CDF).
 """
+
 
 class Exponential:
     """
     Represents an Exponential distribution, providing methods
-    to calculate the PDF and CDF based on the rate parameter (lambtha).
+    to calculate the PDF and CDF based on the rate parameter.
     """
 
     e = 2.7182818285  # Approximation of Euler's number
@@ -15,14 +15,6 @@ class Exponential:
     def __init__(self, data=None, lambtha=1.):
         """
         Initializes the Exponential distribution.
-
-        Args:
-            data (list): A list of data points from which to calculate the rate parameter `lambtha`.
-            lambtha (float): The rate parameter (inverse of the expected value), must be positive.
-        
-        Raises:
-            ValueError: If `lambtha` is not positive or if `data` contains fewer than two values.
-            TypeError: If `data` is not a list.
         """
         if data is None:
             if lambtha <= 0:
@@ -38,13 +30,8 @@ class Exponential:
 
     def pdf(self, x):
         """
-        Calculates the Probability Density Function (PDF) for a given value `x`.
-
-        Args:
-            x (float): The value to calculate the PDF for (must be non-negative).
-
-        Returns:
-            float: The PDF value for the given `x`. Returns 0 if `x` is negative.
+        Calculates the Probability Density Function (PDF)
+        for a given value `x`.
         """
         if x < 0:
             return 0
@@ -53,13 +40,8 @@ class Exponential:
 
     def cdf(self, x):
         """
-        Calculates the Cumulative Distribution Function (CDF) for a given value `x`.
-
-        Args:
-            x (float): The value to calculate the CDF for (must be non-negative).
-
-        Returns:
-            float: The CDF value for the given `x`. Returns 0 if `x` is negative.
+        Calculates the Cumulative Distribution Function (CDF) 
+        for a given value `x`.
         """
         if x < 0:
             return 0
