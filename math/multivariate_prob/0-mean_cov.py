@@ -10,7 +10,7 @@ def mean_cov(X):
     n, d = X.shape
     if n < 2:
         raise ValueError("X must contain multiple data points")
-    
+
     m = np.mean(X, axis=0, keepdims=True)  # Mean of the data points
     C = np.matmul((X - m).T, (X - m)) / (n - 1)  # Covariance matrix
     return m, C
