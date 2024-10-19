@@ -12,7 +12,7 @@ class MultiNormal():
             raise TypeError('data must be a 2D numpy.ndarray')
         d, n = data.shape
         if n < 2:
-            raise ValueError("contain multiple data points")
+            raise ValueError("data must contain multiple data points")
 
         self.mean, self.cov = self.mean_cov(data)
 
