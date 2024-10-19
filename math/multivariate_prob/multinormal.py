@@ -12,13 +12,13 @@ class MultiNormal():
             raise TypeError('data must be a 2D numpy.ndarray')
         d, n = data.shape
         if n < 2:
-            raise ValueError("data must contain multiple data points")
+            raise ValueError("contain multiple data points")
 
         self.mean, self.cov = self.mean_cov(data)
 
     @staticmethod
     def mean_cov(X):
-        """Function that calculates the mean and covariance of a data set"""
+        """Get the mean and covariance of a data set"""
         d, n = X.shape
         m = np.mean(X, axis=1, keepdims=True)
         C = np.matmul((X - m), (X - m).T) / (n - 1)
@@ -38,4 +38,3 @@ class MultiNormal():
         exp = (-.5 * np.matmul(np.matmul((x - m).T, inv), (x - m)))
         result = (1 / bottom) * np.exp(exp[0][0])
         return result
-    
