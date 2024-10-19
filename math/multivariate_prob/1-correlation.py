@@ -13,7 +13,7 @@ def correlation(C):
     stddevs = np.sqrt(np.diag(C))  # Standard deviations
     outer_stddevs = np.outer(stddevs, stddevs)  # Outer product
 
-    cor = C / outer_stddevs  # Normalize matrix to get correlation 
+    cor = C / outer_stddevs  # Normalize matrix to get correlation
     cor[C == 0] = 0  # Prevent division
 
     return cor
