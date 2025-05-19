@@ -45,7 +45,7 @@ class NST:
             raise TypeError("beta must be a non-negative number")
 
         # Sets Tensorflow to execute eagerly
-        tf.enable_eager_execution()
+        #tf.enable_eager_execution()
 
         # Sets the instance attributes
         self.style_image = self.scale_image(style_image)
