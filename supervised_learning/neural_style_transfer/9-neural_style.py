@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Create a class NST that performs tasks for Neural Style Transfer"""
 
 import numpy as np
