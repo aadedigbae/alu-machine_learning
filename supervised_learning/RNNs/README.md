@@ -1,1 +1,1 @@
-Supervised Learning - RNNSSSS
+Supervised Learning - RNNs
