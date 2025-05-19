@@ -44,9 +44,6 @@ class NST:
         if (type(beta) is not float and type(beta) is not int) or beta < 0:
             raise TypeError("beta must be a non-negative number")
 
-        # Sets Tensorflow to execute eagerly
-        #tf.enable_eager_execution()
-
         # Sets the instance attributes
         self.style_image = self.scale_image(style_image)
         self.content_image = self.scale_image(content_image)
